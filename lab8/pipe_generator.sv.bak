@@ -1,0 +1,223 @@
+// picks one out of seven pipe pattern based on 3-bit input
+
+module pipe_generator #(parameter WIDTH=8) (clk, reset, active, index, pattern);
+	input clk, reset, active;
+	input [2:0] index;
+	output reg [7:0] pattern;
+
+	parameter EIGHT_OFF = 8'b00000000;
+	reg [WIDTH-1:0] count = 0;
+	
+	always @(*)
+		if (count < 2)							// generate pipe of width 2
+			case(index)
+				3'b000:	ns = 8'b10011111;
+				3'b001:	ns = 8'b10011111;
+				3'b010:	ns = 8'b10011111;
+				3'b011:	ns = 8'b11001111;
+				3'b100:	ns = 8'b11001111;
+				3'b101:	ns = 8'b11001111;
+				3'b110:	ns = 8'b11100111;
+				3'b111:	ns = 8'b11100111; // forbidden case by lfsr
+				default:	ns = EIGHT_OFF;
+			endcase
+		else										// stay off for WIDTH-2 clock cycles
+			ns <= EIGHT_OFF;
+	
+	assign pattern = ps;
+	
+	always @(posedge clk)
+		if (reset | ~active) begin
+			ps <= EIGHT_OFF;
+			count <= 0;
+		end
+		else begin
+			ps <= ns;
+			count <= count + 1;
+		end
+	end
+endmodule
+
+module pipe_generator_testbench();
+	reg clk, reset;
+	reg [2:0] j;
+	wire [7:0] leds;
+	
+	pipe_generator dut(clk, reset, j, leds);
+	
+	// Set up the clock
+	parameter CLOCK_PERIOD=100;
+	initial clk=1;
+	always begin
+		#(CLOCK_PERIOD/2);
+		clk = ~clk;
+	end
+	
+	initial begin
+		reset <= 1;	j <= 3'b010;	@(posedge clk);
+		reset <= 0;	j <= 3'b000;	@(posedge clk);
+						j <= 3'b001;	@(posedge clk);
+						j <= 3'b010;	@(posedge clk);
+						j <= 3'b011;	@(posedge clk);
+						j <= 3'b100;	@(posedge clk);
+						j <= 3'b101;	@(posedge clk);
+						j <= 3'b110;	@(posedge clk);
+						j <= 3'b111;	@(posedge clk);
+											@(posedge clk);
+		$stop;
+	end
+endmodule
+
+// shift pipes one column over
+module pipe_shifter #(parameter WIDTH=8) (clk, reset, nr, pipes);
+	input clk, reset;
+	input [7:0] nr;
+	output [7:0] pipes;
+	
+	parameter EIGHT_OFF = 8'b00000000;
+	reg [WIDTH-1:0] count = 0;
+	
+	always @(posedge clk)
+		if (reset | ~active) begin
+			pipes[7:0] <= EIGHT_OFF;
+			count <= 0;
+		end
+		else begin
+			if (count == 0) pipes[7:0] <= nr[7:0];
+			count <= count + 1;
+		end
+endmodule
+
+module pipe_shifter_testbench();
+	reg clk, reset;
+	reg [7:0] nr;
+	wire [7:0] pipes;
+	
+	pipe_shifter dut(clk, reset, nr, pipes);
+	
+	// Set up the clock.
+	parameter CLOCK_PERIOD=100;
+	initial clk=1;
+	always begin
+		#(CLOCK_PERIOD/2);
+		clk = ~clk;
+	end
+	
+	initial begin
+		reset <= 0;	nr <= 8'b10100110;	@(posedge clk);
+		reset <= 1;								@(posedge clk);
+													@(posedge clk);
+		$stop;
+	end
+endmodule
+
+// generates a random 3-bit number every 2 clock cycles
+module rand_num3(clk, reset, out);
+	input clk, reset;
+	output [2:0] out;
+	
+	reg [1:0] count; // halve the clock speed
+	reg [2:0] ns;
+	
+	// uses lfsr's to generate random 3 bits
+	wire seed;
+	xnor x (seed, ns[2], ns[1]);
+	lfsr l0(clk, reset, seed, ns[0]);
+	lfsr l1(clk, reset, ns[0], ns[1]);
+	lfsr l2(clk, reset, ns[1], ns[2]);
+	
+	always @(*)
+		if (reset | ~active) begin
+			out <= 3'b000;
+			count <= 0;
+		end
+		else begin
+			if (count == 0) out <= ns;
+			count <= count + 1;
+		end
+endmodule
+
+module rand_num3_testbench();
+	reg clk, reset;
+	wire [3:0] r;
+	
+	rand_num3 dut (clk, reset, r);
+	
+	// Set up the clock.
+	parameter CLOCK_PERIOD=100;
+	initial clk=1;
+	always begin
+		#(CLOCK_PERIOD/2);
+		clk = ~clk;
+	end
+	
+	initial begin
+		reset <= 1;	@(posedge clk);
+		reset <= 0;	@(posedge clk);
+						@(posedge clk);
+						@(posedge clk);
+						@(posedge clk);
+						@(posedge clk);
+						@(posedge clk);
+						@(posedge clk);
+						@(posedge clk);
+		reset <= 1;	@(posedge clk);
+		reset <= 0;	@(posedge clk);
+						@(posedge clk);
+		$stop;
+	end
+endmodule
+
+// lfsr unit: data copier
+module lfsr(clk, reset, d, q);
+	input clk, reset, d;
+	output q;
+	
+	reg ps;
+	
+	// output logic
+	assign q = ps;
+	
+	// DFF's
+	always @(posedge clk)
+		if (reset)
+			ps <= 1'b0;
+		else
+			ps <= d;
+endmodule
+
+module lfsr_testbench();
+	reg clk, reset, d;
+	wire q;
+	
+	lfsr dut (clk, reset, d, q);
+	
+	// Set up the clock.
+	parameter CLOCK_PERIOD=100;
+	initial clk=1;
+	always begin
+		#(CLOCK_PERIOD/2);
+		clk = ~clk;
+	end
+	
+	initial begin
+									@(posedge clk);
+		reset <= 1;	d <= 0;	@(posedge clk);
+						d <= 1;	@(posedge clk);
+		reset <= 0;	d <= 0;	@(posedge clk);
+						d <= 1;	@(posedge clk);
+									@(posedge clk);
+									@(posedge clk);
+						d <= 0;	@(posedge clk);
+									@(posedge clk);
+									@(posedge clk);
+						d <= 1;	@(posedge clk);
+						d <= 0;	@(posedge clk);
+						d <= 1;	@(posedge clk);
+						d <= 0;	@(posedge clk);
+									@(posedge clk);
+									@(posedge clk);
+		$stop;
+	end
+endmodule
+

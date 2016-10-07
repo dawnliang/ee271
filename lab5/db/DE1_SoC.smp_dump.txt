@@ -1,0 +1,7 @@
+
+State Machine - |DE1_SoC2|winddir:s|ps
+Name ps~4 ps~3 ps~2 
+ps.INNER 0 0 0 
+ps.RIGHT 0 1 1 
+ps.LEFT 1 1 0 
+ps.OUTER 1 1 1 

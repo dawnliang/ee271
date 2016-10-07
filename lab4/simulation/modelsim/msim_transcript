@@ -1,0 +1,52 @@
+# Reading C:/altera/14.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do DE1_SoC_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -sv -work work +incdir+U:/ee271/lab4 {U:/ee271/lab4/upc_check.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module upc_check
+# -- Compiling module upc_check_testbench
+# 
+# Top level modules:
+# 	upc_check_testbench
+# vlog -sv -work work +incdir+U:/ee271/lab4 {U:/ee271/lab4/upc_display.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module upc_display
+# -- Compiling module upc_display_testbench
+# 
+# Top level modules:
+# 	upc_display_testbench
+# vlog -sv -work work +incdir+U:/ee271/lab4 {U:/ee271/lab4/DE1_SoC2.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module DE1_SoC2
+# -- Compiling module DE1_SoC2_testbench
+# 
+# Top level modules:
+# 	DE1_SoC2_testbench
+# 
+vsim work.DE1_SoC2_testbench
+# vsim work.DE1_SoC2_testbench 
+# Loading sv_std.std
+# Loading work.DE1_SoC2_testbench
+# Loading work.DE1_SoC2
+# Loading work.upc_check
+# Loading work.upc_display
+add wave -position end  sim:/DE1_SoC2_testbench/HEX0
+add wave -position end  sim:/DE1_SoC2_testbench/HEX1
+add wave -position end  sim:/DE1_SoC2_testbench/HEX2
+add wave -position end  sim:/DE1_SoC2_testbench/HEX3
+add wave -position end  sim:/DE1_SoC2_testbench/HEX4
+add wave -position end  sim:/DE1_SoC2_testbench/HEX5
+add wave -position end  sim:/DE1_SoC2_testbench/SW[3]
+add wave -position end  sim:/DE1_SoC2_testbench/SW[2]
+add wave -position end  sim:/DE1_SoC2_testbench/SW[1]
+add wave -position end  sim:/DE1_SoC2_testbench/SW[0]
+run -all

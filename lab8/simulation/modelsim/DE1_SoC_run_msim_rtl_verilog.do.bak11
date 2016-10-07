@@ -1,0 +1,18 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -sv -work work +incdir+U:/ee271/lab8 {U:/ee271/lab8/DE1_SoC.sv}
+vlog -sv -work work +incdir+U:/ee271/lab8 {U:/ee271/lab8/led_matrix_driver.sv}
+vlog -sv -work work +incdir+U:/ee271/lab8 {U:/ee271/lab8/user_input.sv}
+vlog -sv -work work +incdir+U:/ee271/lab8 {U:/ee271/lab8/active_game.sv}
+vlog -sv -work work +incdir+U:/ee271/lab8 {U:/ee271/lab8/cc_light.sv}
+vlog -sv -work work +incdir+U:/ee271/lab8 {U:/ee271/lab8/pipe_generator.sv}
+vlog -sv -work work +incdir+U:/ee271/lab8 {U:/ee271/lab8/rand_num.sv}
+vlog -sv -work work +incdir+U:/ee271/lab8 {U:/ee271/lab8/pipe_shifter.sv}
+vlog -sv -work work +incdir+U:/ee271/lab8 {U:/ee271/lab8/single_hex.sv}
+vlog -sv -work work +incdir+U:/ee271/lab8 {U:/ee271/lab8/status_checker.sv}
+

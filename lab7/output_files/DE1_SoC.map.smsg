@@ -1,0 +1,3 @@
+Info (10281): Verilog HDL Declaration information at DE1_SoC.sv(31): object "r" differs only in case from object "R" in the same scope
+Warning (10273): Verilog HDL warning at victory.sv(34): extended using "x" or "z"
+Warning (10034): Output port "LEDR[0]" at DE1_SoC.sv(6) has no driver

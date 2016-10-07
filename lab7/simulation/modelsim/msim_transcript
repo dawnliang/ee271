@@ -1,0 +1,138 @@
+# Reading C:/altera/14.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do DE1_SoC_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -sv -work work +incdir+U:/ee271/lab7 {U:/ee271/lab7/DE1_SoC.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module DE1_SoC
+# -- Compiling module DE1_SoC_testbench
+# -- Compiling module clock_divider
+# 
+# Top level modules:
+# 	DE1_SoC_testbench
+# vlog -sv -work work +incdir+U:/ee271/lab7 {U:/ee271/lab7/user_input.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module user_input
+# -- Compiling module user_input_testbench
+# 
+# Top level modules:
+# 	user_input_testbench
+# vlog -sv -work work +incdir+U:/ee271/lab7 {U:/ee271/lab7/normalLight.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module normalLight
+# -- Compiling module normalLight_testbench
+# 
+# Top level modules:
+# 	normalLight_testbench
+# vlog -sv -work work +incdir+U:/ee271/lab7 {U:/ee271/lab7/victory.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module victory
+# -- Compiling module victory_testbench
+# 
+# Top level modules:
+# 	victory_testbench
+# vlog -sv -work work +incdir+U:/ee271/lab7 {U:/ee271/lab7/lfsr.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module lfsr
+# -- Compiling module lfsr_testbench
+# 
+# Top level modules:
+# 	lfsr_testbench
+# vlog -sv -work work +incdir+U:/ee271/lab7 {U:/ee271/lab7/adder.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module adder
+# -- Compiling module adder_testbench
+# 
+# Top level modules:
+# 	adder_testbench
+# vlog -sv -work work +incdir+U:/ee271/lab7 {U:/ee271/lab7/lfsr9.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module lfsr9
+# -- Compiling module lfsr9_testbench
+# 
+# Top level modules:
+# 	lfsr9_testbench
+# 
+vsim work.DE1_SoC_testbench
+# vsim work.DE1_SoC_testbench 
+# Loading sv_std.std
+# Loading work.DE1_SoC_testbench
+# Loading work.DE1_SoC
+# Loading work.clock_divider
+# Loading work.lfsr9
+# Loading work.lfsr
+# Loading work.adder
+# Loading work.user_input
+# Loading work.normalLight
+# Loading work.victory
+# ** Warning: (vsim-3015) U:/ee271/lab7/DE1_SoC.sv(31): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'clk'. The port definition is at: U:/ee271/lab7/lfsr9.sv(3).
+# 
+#         Region: /DE1_SoC_testbench/dut/r
+# ** Warning: (vsim-3015) U:/ee271/lab7/DE1_SoC.sv(39): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'clk'. The port definition is at: U:/ee271/lab7/user_input.sv(1).
+# 
+#         Region: /DE1_SoC_testbench/dut/p1L
+# ** Warning: (vsim-3015) U:/ee271/lab7/DE1_SoC.sv(40): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'clk'. The port definition is at: U:/ee271/lab7/user_input.sv(1).
+# 
+#         Region: /DE1_SoC_testbench/dut/p2R
+# ** Warning: (vsim-3015) U:/ee271/lab7/DE1_SoC.sv(43): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'clk'. The port definition is at: U:/ee271/lab7/normalLight.sv(1).
+# 
+#         Region: /DE1_SoC_testbench/dut/n1
+# ** Warning: (vsim-3015) U:/ee271/lab7/DE1_SoC.sv(44): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'clk'. The port definition is at: U:/ee271/lab7/normalLight.sv(1).
+# 
+#         Region: /DE1_SoC_testbench/dut/n2
+# ** Warning: (vsim-3015) U:/ee271/lab7/DE1_SoC.sv(45): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'clk'. The port definition is at: U:/ee271/lab7/normalLight.sv(1).
+# 
+#         Region: /DE1_SoC_testbench/dut/n3
+# ** Warning: (vsim-3015) U:/ee271/lab7/DE1_SoC.sv(46): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'clk'. The port definition is at: U:/ee271/lab7/normalLight.sv(1).
+# 
+#         Region: /DE1_SoC_testbench/dut/n4
+# ** Warning: (vsim-3015) U:/ee271/lab7/DE1_SoC.sv(47): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'clk'. The port definition is at: U:/ee271/lab7/normalLight.sv(1).
+# 
+#         Region: /DE1_SoC_testbench/dut/n5
+# ** Warning: (vsim-3015) U:/ee271/lab7/DE1_SoC.sv(48): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'clk'. The port definition is at: U:/ee271/lab7/normalLight.sv(1).
+# 
+#         Region: /DE1_SoC_testbench/dut/n6
+# ** Warning: (vsim-3015) U:/ee271/lab7/DE1_SoC.sv(49): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'clk'. The port definition is at: U:/ee271/lab7/normalLight.sv(1).
+# 
+#         Region: /DE1_SoC_testbench/dut/n7
+# ** Warning: (vsim-3015) U:/ee271/lab7/DE1_SoC.sv(50): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'clk'. The port definition is at: U:/ee271/lab7/normalLight.sv(1).
+# 
+#         Region: /DE1_SoC_testbench/dut/n8
+# ** Warning: (vsim-3015) U:/ee271/lab7/DE1_SoC.sv(51): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'clk'. The port definition is at: U:/ee271/lab7/normalLight.sv(1).
+# 
+#         Region: /DE1_SoC_testbench/dut/n9
+# ** Warning: (vsim-3015) U:/ee271/lab7/DE1_SoC.sv(54): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'clk'. The port definition is at: U:/ee271/lab7/victory.sv(3).
+# 
+#         Region: /DE1_SoC_testbench/dut/vl
+# ** Warning: (vsim-3015) U:/ee271/lab7/DE1_SoC.sv(55): [PCDPC] - Port size (1 or 1) does not match connection size (32) for port 'clk'. The port definition is at: U:/ee271/lab7/victory.sv(3).
+# 
+#         Region: /DE1_SoC_testbench/dut/vr
+view -new wave
+# -new not supported on PE
+add wave -position insertpoint  \
+sim:/DE1_SoC_testbench/clock
+add wave -position end  sim:/DE1_SoC_testbench/SW[9]
+add wave -position end  sim:/DE1_SoC_testbench/KEY[3]
+add wave -position end  sim:/DE1_SoC_testbench/LEDR[9]
+add wave -position end  sim:/DE1_SoC_testbench/LEDR[8]
+add wave -position end  sim:/DE1_SoC_testbench/LEDR[7]
+add wave -position end  sim:/DE1_SoC_testbench/LEDR[6]
+add wave -position end  sim:/DE1_SoC_testbench/LEDR[5]
+add wave -position end  sim:/DE1_SoC_testbench/LEDR[4]
+add wave -position end  sim:/DE1_SoC_testbench/LEDR[3]
+add wave -position end  sim:/DE1_SoC_testbench/LEDR[2]
+add wave -position end  sim:/DE1_SoC_testbench/LEDR[1]
+add wave -position end  sim:/DE1_SoC_testbench/HEX0
+add wave -position end  sim:/DE1_SoC_testbench/HEX5
+run -all
+# Break in Module DE1_SoC_testbench at U:/ee271/lab7/DE1_SoC.sv line 168
+add wave -position 3  sim:/DE1_SoC_testbench/KEY[0]
+add wave -position end  sim:/DE1_SoC_testbench/LEDR

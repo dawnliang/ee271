@@ -1,0 +1,18 @@
+module upc_check (mupc, D, S);
+	output	D, S;
+	input		[3:0]	mupc;
+endmodule
+
+module upc_check_testbench();
+	wire  [1:0] LEDR;
+	reg   [3:0] SW;
+		
+	upc_check dut (SW[3:0], LEDR[0], LEDR[1]);
+
+	integer i;
+	initial begin
+		for(i = 0; i < 16; i++) begin
+			SW[3:0] = i; #10;
+		end
+	end
+endmodule

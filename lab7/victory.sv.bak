@@ -1,0 +1,3 @@
+module victory (LW, RW, display);
+
+endmodule

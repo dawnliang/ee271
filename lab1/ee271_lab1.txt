@@ -1,0 +1,21 @@
+a) dawn liang
+ee271a lab1
+
+b) mux4_1 takes 4 inputs (i00, i01, i10, i11), 2 selection inputs (sel0, sel1)
+sel0 determines the second digit of the index of the selected input to output
+sel1 determines the first digit of the index of the selected input to output
+
+i.e.
+sel0	sel1	| out
+0	0	| i00
+0	1	| i10
+1	0	| i01
+1	1	| i11
+
+c) LEDR1 lights up; LED’s light up when passed TRUE (VDD rail)
+
+TRUE values
+d) SW9 UP
+e) KEY3 UNPRESSED
+
+total hours: ~2 hr.

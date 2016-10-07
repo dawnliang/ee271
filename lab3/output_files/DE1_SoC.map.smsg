@@ -1,0 +1,2 @@
+Warning (10034): Output port "LEDR[9..2]" at upc_check.sv(5) has no driver
+Warning (13024): Output pins are stuck at VCC or GND

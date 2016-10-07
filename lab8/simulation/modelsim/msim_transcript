@@ -1,0 +1,136 @@
+# Reading C:/altera/14.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do DE1_SoC_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -sv -work work +incdir+U:/ee271/lab8 {U:/ee271/lab8/DE1_SoC.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module DE1_SoC
+# -- Compiling module DE1_SoC_testbench
+# -- Compiling module clock_divider
+# 
+# Top level modules:
+# 	DE1_SoC_testbench
+# vlog -sv -work work +incdir+U:/ee271/lab8 {U:/ee271/lab8/led_matrix_driver.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module led_matrix_driver
+# -- Compiling module led_matrix_driver_testbench
+# 
+# Top level modules:
+# 	led_matrix_driver_testbench
+# vlog -sv -work work +incdir+U:/ee271/lab8 {U:/ee271/lab8/user_input.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module user_input
+# -- Compiling module user_input_testbench
+# 
+# Top level modules:
+# 	user_input_testbench
+# vlog -sv -work work +incdir+U:/ee271/lab8 {U:/ee271/lab8/active_game.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module active_game
+# -- Compiling module active_game_testbench
+# 
+# Top level modules:
+# 	active_game_testbench
+# vlog -sv -work work +incdir+U:/ee271/lab8 {U:/ee271/lab8/cc_light.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module cc_light
+# -- Compiling module cc_light_testbench
+# 
+# Top level modules:
+# 	cc_light_testbench
+# vlog -sv -work work +incdir+U:/ee271/lab8 {U:/ee271/lab8/pipe_generator.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module pipe_generator
+# -- Compiling module pipe_generator_testbench
+# 
+# Top level modules:
+# 	pipe_generator_testbench
+# vlog -sv -work work +incdir+U:/ee271/lab8 {U:/ee271/lab8/rand_num.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module rand_num3
+# -- Compiling module rand_num3_testbench
+# -- Compiling module lfsr
+# -- Compiling module lfsr_testbench
+# 
+# Top level modules:
+# 	rand_num3_testbench
+# 	lfsr_testbench
+# vlog -sv -work work +incdir+U:/ee271/lab8 {U:/ee271/lab8/pipe_shifter.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module pipe_shifter
+# -- Compiling module pipe_shifter_testbench
+# 
+# Top level modules:
+# 	pipe_shifter_testbench
+# vlog -sv -work work +incdir+U:/ee271/lab8 {U:/ee271/lab8/single_hex.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module single_hex
+# -- Compiling module single_hex_testbench
+# 
+# Top level modules:
+# 	single_hex_testbench
+# vlog -sv -work work +incdir+U:/ee271/lab8 {U:/ee271/lab8/status_checker.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module status_checker
+# -- Compiling module status_checker_testbench
+# 
+# Top level modules:
+# 	status_checker_testbench
+# 
+vsim work.cc_light_testbench
+# vsim work.cc_light_testbench 
+# Loading sv_std.std
+# Loading work.cc_light_testbench
+# Loading work.cc_light
+add wave -position end  sim:/cc_light_testbench/clk
+add wave -position end  sim:/cc_light_testbench/reset
+add wave -position end  sim:/cc_light_testbench/active
+add wave -position end  sim:/cc_light_testbench/over
+add wave -position end  sim:/cc_light_testbench/ctrl
+add wave -position end  sim:/cc_light_testbench/dv
+add wave -position end  sim:/cc_light_testbench/nu
+add wave -position end  sim:/cc_light_testbench/nd
+add wave -position end  sim:/cc_light_testbench/ul
+add wave -position end  sim:/cc_light_testbench/lightOn
+run -all
+# Break in Module cc_light_testbench at U:/ee271/lab8/cc_light.sv line 78
+vsim work.DE1_SoC_testbench
+# vsim work.DE1_SoC_testbench 
+# Loading sv_std.std
+# Loading work.DE1_SoC_testbench
+# Loading work.DE1_SoC
+# Loading work.clock_divider
+# Loading work.user_input
+# Loading work.active_game
+# Loading work.cc_light
+# Loading work.rand_num3
+# Loading work.lfsr
+# Loading work.pipe_generator
+# Loading work.pipe_shifter
+# Loading work.led_matrix_driver
+# Loading work.status_checker
+# Loading work.single_hex
+add wave -position end  sim:/DE1_SoC_testbench/clk
+add wave -position end  sim:/DE1_SoC_testbench/HEX0
+add wave -position end  sim:/DE1_SoC_testbench/HEX1
+add wave -position end  sim:/DE1_SoC_testbench/HEX2
+add wave -position end  sim:/DE1_SoC_testbench/HEX3
+add wave -position end  sim:/DE1_SoC_testbench/HEX4
+add wave -position end  sim:/DE1_SoC_testbench/HEX5
+add wave -position end  sim:/DE1_SoC_testbench/LEDR
+add wave -position end  sim:/DE1_SoC_testbench/KEY
+add wave -position end  sim:/DE1_SoC_testbench/SW
+add wave -position end  sim:/DE1_SoC_testbench/GPIO_0
+do U:/ee271/lab8/simulation/modelsim/DE1_SoC_wave.do
+run -all
+# Break in Module DE1_SoC_testbench at U:/ee271/lab8/DE1_SoC.sv line 154
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf U:/ee271/lab8/simulation/modelsim/wave.do
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf U:/ee271/lab8/simulation/modelsim/DE1_SoC_wave.do

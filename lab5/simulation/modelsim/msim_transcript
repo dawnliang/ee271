@@ -1,0 +1,54 @@
+# Reading C:/altera/14.0/modelsim_ase/tcl/vsim/pref.tcl 
+# do DE1_SoC_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\14.0\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -sv -work work +incdir+U:/ee271/lab5 {U:/ee271/lab5/simple.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module simple
+# -- Compiling module simple_testbench
+# 
+# Top level modules:
+# 	simple_testbench
+# vlog -sv -work work +incdir+U:/ee271/lab5 {U:/ee271/lab5/winddir.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module winddir
+# -- Compiling module winddir_testbench
+# 
+# Top level modules:
+# 	winddir_testbench
+# vlog -sv -work work +incdir+U:/ee271/lab5 {U:/ee271/lab5/DE1_SoC.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module DE1_SoC
+# -- Compiling module clock_divider
+# 
+# Top level modules:
+# 	DE1_SoC
+# vlog -sv -work work +incdir+U:/ee271/lab5 {U:/ee271/lab5/DE1_SoC2.sv}
+# Model Technology ModelSim ALTERA vlog 10.1e Compiler 2013.06 Jun 12 2013
+# -- Compiling module DE1_SoC2
+# -- Compiling module clock_divider2
+# 
+# Top level modules:
+# 	DE1_SoC2
+# 	clock_divider2
+# 
+vsim work.winddir_testbench
+# vsim work.winddir_testbench 
+# Loading sv_std.std
+# Loading work.winddir_testbench
+# Loading work.winddir
+add wave -position insertpoint  \
+sim:/winddir_testbench/clk \
+sim:/winddir_testbench/reset \
+sim:/winddir_testbench/dir \
+sim:/winddir_testbench/pattern
+run -all
+# Break in Module winddir_testbench at U:/ee271/lab5/winddir.sv line 88

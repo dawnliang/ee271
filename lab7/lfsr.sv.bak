@@ -1,0 +1,8 @@
+// LFSR
+
+module lfsr(clk, reset, d, q);
+	input clk, reset, d;
+	output q;
+	
+	
+endmodule

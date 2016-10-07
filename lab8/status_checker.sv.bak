@@ -1,0 +1,62 @@
+// checks whether the player (cc) has crashed into a pipe
+
+module status_checker (clk, reset, active, player, pipes, crash, addPoint);
+	input clk, reset, active;
+	input [7:0] player, pipes;
+	output crash, addPoint;
+	
+	reg psc, nsc;
+	reg [7:0] psp, nsp;
+	
+	always @(*) begin
+		nsc = player[0]					// fall down
+				| player[7] & pipes[7]	// hit pipe
+				| player[6] & pipes[6]
+				| player[5] & pipes[5]
+				| player[4] & pipes[4]
+				| player[3] & pipes[3]
+				| player[2] & pipes[2]
+				| player[1] & pipes[1];
+		nsp = pipes;
+	end
+	
+	assign crash = psc;
+	assign addPoint = ~(psp == 8'b00000000) & (pipes == 8'b00000000);
+			
+	always @(posedge clk)
+		if(reset | ~active) begin
+			psc <= 1'b0;
+			psp <= 8'b00000000;
+		end
+		else begin
+			psc <= nsc;
+			psp <= nsp;
+		end
+endmodule
+
+module crash_tester_testbench();
+	reg clk, reset, active;
+	reg [7:0] player, pipes;
+	wire crash;
+	
+	crash_tester dut(clk, reset, active, player, pipes, crash);
+	
+	// Set up the clock.
+	parameter CLOCK_PERIOD=100;
+	initial clk=1;
+	always begin
+		#(CLOCK_PERIOD/2);
+		clk = ~clk;
+	end
+	
+	initial begin
+		reset <= 1;	player <= 8'b00010000;	pipes <= 8'b11100111; 	@(posedge clk);
+		reset <= 0;									pipes <= 8'b11001111;	@(posedge clk);
+														pipes <= 8'b00000000;	@(posedge clk);
+														pipes <= 8'b11111001;	@(posedge clk);
+						player <= 8'b00000001;									@(posedge clk);
+		reset <= 1;																	@(posedge clk);
+																						@(posedge clk);
+		$stop;
+	end
+endmodule

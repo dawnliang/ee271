@@ -1,0 +1,35 @@
+item	U	P	C	D	E
+siamese	0	0	0	0	1
+persian	0	0	1	0	0
+x		0	1	0	x	x
+coon	0	1	1	1	0
+fold	1	0	0	0	1
+bengal	1	0	1	1	1
+ragdoll	1	1	0	1	0
+x		1	1	1	x	x
+
+don't care cases:
+
+case(3'b010)
+HEX3 = 7'b1001110;
+HEX2 = 7'b1010100;
+HEX1 = 7'b1000000;
+HEX0 = 7'b1010000;
+
+case(3'b111)
+HEX3 = 7'b1000010;
+HEX2 = 7'b1001000;
+HEX1 = 7'b0000000;
+HEX0 = 7'b0000000;
+
+explanations:
+siamese cats are really popular since they have a nice temper and pretty
+coloring. however they're usually wanted as purebreeds, so they're expensive
+to breed.
+persian cats are pretty average cats.
+maine coon cats are very friendly but not the prettiest, so they're probably
+not being purchased as often and are being sold at a discount.
+scottish folds are actually victims of a genetic disability/animal cruelty,
+so they're very expensive in an attempt to discourage purchase, demand,
+and by extension breeding.
+ragdoll cats are also pretty average; just a random sale of ragdoll cats.

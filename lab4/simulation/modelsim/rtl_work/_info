@@ -1,0 +1,145 @@
+m255
+K3
+13
+cModel Technology
+Z0 dU:\ee271\lab4\simulation\modelsim
+vDE1_SoC2
+Z1 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
+!i10b 1
+!s100 hS3`7Y=3P_4FXZ<nMoZz@1
+I??Hmfe^[BVXzlUm^0A8E>0
+V^`Ob8h[cK>A2lNL8l76lE0
+Z2 !s105 DE1_SoC2_sv_unit
+S1
+Z3 dU:\ee271\lab4\simulation\modelsim
+Z4 w1430112126
+Z5 8U:/ee271/lab4/DE1_SoC2.sv
+Z6 FU:/ee271/lab4/DE1_SoC2.sv
+L0 3
+Z7 OV;L;10.1e;51
+r1
+!s85 0
+31
+Z8 !s108 1430179040.820000
+Z9 !s107 U:/ee271/lab4/DE1_SoC2.sv|
+Z10 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/ee271/lab4|U:/ee271/lab4/DE1_SoC2.sv|
+!s101 -O0
+Z11 o-sv -work work -O0
+Z12 !s92 -sv -work work +incdir+U:/ee271/lab4 -O0
+n@d@e1_@so@c2
+vDE1_SoC2_testbench
+R1
+!i10b 1
+!s100 fXo1W9:jWF9EhMJ6^@LVi0
+Ih8KIeS1nnfYY4NgflBl8g0
+VBC6i34o14zCl<K9O]>a541
+R2
+S1
+R3
+R4
+R5
+R6
+L0 16
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!s101 -O0
+R11
+R12
+n@d@e1_@so@c2_testbench
+vupc_check
+R1
+Z13 Ih^nY888<8FhbIj;=4[CnP1
+Z14 VFPf[zazcSH7PXBUJDaS`[1
+Z15 !s105 upc_check_sv_unit
+S1
+R3
+Z16 w1429820752
+Z17 8U:/ee271/lab4/upc_check.sv
+Z18 FU:/ee271/lab4/upc_check.sv
+L0 1
+R7
+r1
+31
+Z19 !s108 1430179037.308000
+Z20 !s107 U:/ee271/lab4/upc_check.sv|
+Z21 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/ee271/lab4|U:/ee271/lab4/upc_check.sv|
+R11
+R12
+Z22 !s100 A2[P6VlfVg62_mcog?[RI1
+!i10b 1
+!s85 0
+!s101 -O0
+vupc_check_testbench
+R1
+Z23 Ik@jdfkM_Ma[<h9fS8LLnR3
+Z24 VQnh=2[?6TfD5[2bf@eR5I1
+R15
+S1
+R3
+R16
+R17
+R18
+L0 30
+R7
+r1
+31
+R19
+R20
+R21
+R11
+R12
+Z25 !s100 M>`U<E<gADMG?SlV[:KXz1
+!i10b 1
+!s85 0
+!s101 -O0
+vupc_display
+R1
+Z26 IdoiSAVf:Vie2NI<FQ0kg]1
+Z27 VE:oVNbdbW18Th[22L;[9:2
+Z28 !s105 upc_display_sv_unit
+S1
+R3
+Z29 w1430112150
+Z30 8U:/ee271/lab4/upc_display.sv
+Z31 FU:/ee271/lab4/upc_display.sv
+L0 1
+R7
+r1
+31
+Z32 !s108 1430179039.143000
+Z33 !s107 U:/ee271/lab4/upc_display.sv|
+Z34 !s90 -reportprogress|300|-sv|-work|work|+incdir+U:/ee271/lab4|U:/ee271/lab4/upc_display.sv|
+R11
+R12
+!i10b 1
+Z35 !s100 `UBS5aAiL;d?2XI446gQX0
+!s85 0
+!s101 -O0
+vupc_display_testbench
+R1
+Z36 Ia8^TYm0?S3AZaBEEm3JTR1
+Z37 VnYagdc6lCAoW^mfbW1D`30
+R28
+S1
+R3
+R29
+R30
+R31
+L0 53
+R7
+r1
+31
+R32
+R33
+R34
+R11
+R12
+!i10b 1
+Z38 !s100 44mQR6T8VRQDUdOoh<hj03
+!s85 0
+!s101 -O0

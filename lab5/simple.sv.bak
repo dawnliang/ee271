@@ -1,0 +1,32 @@
+module simple (clk, reset, w, out);
+	input clk, reset, w;
+	output reg out;
+	
+	reg [1:0] ps; // Present State
+	reg [1:0] ns; // Next State
+	
+	// State encoding.
+	parameter [1:0] A = 2'b00, B = 2'b01, C = 2'b10;
+	
+	// Next State logic
+	always @(*)
+		case (ps)
+			A: if (w) ns = B;
+				else ns = A;
+			B: if (w) ns = C;
+				else ns = A;
+			C: if (w) ns = C;
+				else ns = A;
+			default: ns = 2'bxx;
+		endcase
+		
+	// Output logic - could also be another always, or part of above block.
+	assign out = (ps == C);
+	
+	// DFFs
+	always @(posedge clk)
+		if (reset)
+			ps <= A;
+		else
+			ps <= ns;
+endmodule
