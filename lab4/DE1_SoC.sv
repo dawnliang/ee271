@@ -3,8 +3,8 @@
 module DE1_SoC (HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, KEY, LEDR, SW);
 	output	[6:0]	HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
 	output	[9:0]	LEDR;
-	input		[3:0]	KEY;
-	input		[9:0]	SW;
+	input	[3:0]	KEY;
+	input	[9:0]	SW;
 	
 	// Default values, turns off the HEX displays
 	assign HEX2 = 7'b1111111;
